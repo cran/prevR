@@ -1,8 +1,8 @@
 Package: prevR
 Type: Package
 Title: Estimating regional trends of a prevalence from a DHS
-Version: 2.1
-Date: 2012-06-18
+Version: 2.2
+Date: 2013-03-08
 Author: Joseph Larmarange - CEPED (Universite Paris Descartes Ined IRD)
         IRD, with fundings from ANRS and IRD, and technical support
         from LYSIS (info@lysis-consultants.fr)
@@ -14,9 +14,10 @@ License: CeCILL
 URL: http://www.ceped.org/prevR, http://joseph.larmarange.net/prevR
 LazyLoad: yes
 LazyData: yes
-Depends: R (>= 2.10), methods, sp, gstat, maptools, fields, GenKern,
-        rgdal (>= 0.7-4), geoR, tcltk
+Depends: R (>= 2.10), foreign, methods, sp, gstat, maptools, fields,
+        GenKern, rgdal (>= 0.7-4), geoR, tcltk
 Encoding: UTF-8
-Packaged: 2012-06-20 08:55:49 UTC; LYSIS
+Packaged: 2013-03-12 12:43:31 UTC; Joseph
+NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2012-06-20 10:09:04
+Date/Publication: 2013-03-12 18:01:30
