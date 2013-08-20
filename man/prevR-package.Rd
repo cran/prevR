@@ -8,11 +8,12 @@
 \details{\tabular{ll}{
 Package: \tab prevR\cr
 Type: \tab Package\cr
-Version: \tab 2.2\cr
+Version: \tab 2.8\cr
 Licence: \tab CeCILL-C - \url{http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
 Website: \tab \url{http://www.ceped.org/prevR},\cr
  \tab \url{http://joseph.larmarange.net/prevR}\cr
-Depends: \tab \pkg{\link[methods:methods-package]{methods}}, \pkg{foreign}, \pkg{sp}, \pkg{gstat}, \pkg{maptools}, \pkg{\link[fields:fields-package]{fields}}, \pkg{GenKern}, \pkg{rgdal}, \pkg{geoR}, \pkg{\link[tcltk:tcltk-package]{tcltk}}\cr
+Depends: \tab \pkg{\link[methods:methods-package]{methods}}, \pkg{sp}, \pkg{gstat}, \pkg{\link[fields:fields-package]{fields}}, \pkg{GenKern}, \pkg{rgdal} \cr
+Suggests: \tab \pkg{foreign}, \pkg{maptools}, \pkg{geoR}, \pkg{\link[tcltk:tcltk-package]{tcltk}}\cr
 }
 
 This package performs a methodological approach for spatial estimation of regional trends of a prevalence using data from surveys using a stratified two-stage sample design (as Demographic and Health Surveys). In these kind of surveys, positive and control cases are spatially positioned at the centre of their corresponding surveyed cluster.
@@ -59,11 +60,11 @@ Calculated surfaces could be export using the function \code{\link[maptools]{wri
 
 \author{
 Joseph Larmarange \email{joseph.larmarange@ird.fr}\cr
-CEPED (Université Paris Descartes Ined IRD) - IRD
+IRD - CEPED (UMR 196 Université Paris Descartes Ined IRD)
 }
 
 \section{Acknowledgement}{
-\pkg{prevR} has been developed with fundings from the French National Agency for Research on AIDS and Viral Hepatitis (ANRS - \url{http://www.anrs.fr}) and the French Research Institute for Development (IRD - \url{http://www.ird.fr}), and technical support from  LYSIS (info@lysis-consultants.fr).
+\pkg{prevR} has been developed with funding from the French National Agency for Research on AIDS and Viral Hepatitis (ANRS - \url{http://www.anrs.fr}) and the French Research Institute for Development (IRD - \url{http://www.ird.fr}), and technical support from  LYSIS (info@lysis-consultants.fr).
 }
 
 \section{Citation}{
@@ -97,18 +98,18 @@ dhs <- as.prevR(fdhs.clusters,col, fdhs.boundary)
 str(dhs)
 print(dhs)
 
-plot(dhs, main="Clusters position", new.window=FALSE)
-plot(dhs, type="c.type", main="Clusters by residence", new.window=FALSE)
-plot(dhs, type="count", main="Observations by cluster", new.window=FALSE)
-plot(dhs, type="flower", main="Positive cases by cluster", new.window=FALSE)
+plot(dhs, main="Clusters position")
+plot(dhs, type="c.type", main="Clusters by residence")
+plot(dhs, type="count", main="Observations by cluster")
+plot(dhs, type="flower", main="Positive cases by cluster")
 
 
 # Changing coordinates projection
-plot(dhs,axes=TRUE,new.window=FALSE)
+plot(dhs,axes=TRUE)
 dhs <- changeproj(dhs,
        "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
 print(dhs)
-plot(dhs, axes=TRUE, new.window=FALSE)
+plot(dhs, axes=TRUE)
 
 # Calculating rings of equal number of observations for different values of N
 dhs <- rings(dhs,N=c(100,200,300,400,500))
