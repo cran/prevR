@@ -10,7 +10,7 @@ setGeneric("rings",
 #' For each cluster, this function determines a ring of equal number of observations 
 #' and/or equal radius and calculates several indicators from observations located inside that ring.
 #' 
-#' @param object object of class \code{\link[=prevR-class]{prevR}}.
+#' @param object object of class [prevR-class].
 #' @param N minimum number of observations.
 #' @param R maximum rings radius (in kilometers if coordinates in decimal degrees, 
 #'   in the unit of the projection otherwise).
@@ -53,17 +53,17 @@ setGeneric("rings",
 #' Note 2: \emph{r.wpos}, \emph{r.wn} and \emph{r.wprev} are calculated only if the slot \code{clusters} 
 #' of \code{object} contains weighted data.
 #' 
-#' @seealso \code{\link{prevR-class}}.
+#' @seealso [prevR-class].
 #' 
 #' @references 
 #' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 
 #' "Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)", 
-#' \emph{Cybergeo : European Journal of Geography}, no 558, \url{http://cybergeo.revues.org/24606}, 
+#' \emph{Cybergeo : European Journal of Geography}, no 558, \url{https://journals.openedition.org/cybergeo/24606}, 
 #' DOI: 10.4000/cybergeo.24606.
 #' 
 #' Larmarange Joseph (2007) \emph{Prévalences du VIH en Afrique : validité d'une mesure}, 
 #' PhD thesis in demography, directed by Benoît Ferry, université Paris Descartes, 
-#' \url{http://tel.archives-ouvertes.fr/tel-00320283}.
+#' \url{https://tel.archives-ouvertes.fr/tel-00320283}.
 #' 
 #' @examples 
 #' \dontrun{

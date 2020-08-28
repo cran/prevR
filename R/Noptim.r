@@ -5,14 +5,14 @@
 #' of observations and the number of clusters. See Larmarange et al. 2011
 #' for more details.
 #' 
-#' @param object object of class \code{\link[=prevR-class]{prevR}}.
+#' @param object object of class [prevR-class].
 #' 
 #' @return an integer.
 #' 
 #' @references
 #' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 
 #' "Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)", 
-#' \emph{Cybergeo: European Journal of Geography}, no 558, \url{http://cybergeo.revues.org/24606}, 
+#' \emph{Cybergeo: European Journal of Geography}, no 558, \url{https://journals.openedition.org/cybergeo/24606}, 
 #' DOI: 10.4000/cybergeo.24606.
 #' 
 #' @examples 

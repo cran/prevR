@@ -1,12 +1,12 @@
 #' Convert a surface in xyz to a data frame.
 #' 
-#' Several functions (for example \code{\link[GenKern]{KernSur}}\{\pkg{GenKern}\}) 
+#' Several functions (for example [GenKern::KernSur()]) 
 #' return a surface as a list "xyz" composed of three elements: vector of ordinates in the x dimension, 
 #' vector of ordinates in the y dimension and a matrix with the values of the surface in x and y. 
 #' This function transforms a list "xyz" into a data frame.
 #' 
 #' @param xyz a list with 3 elements: a vector with x-coordinates, a vector with y-coordinates and 
-#'   and matrix with value for each point of coordinates x[i],y[j].
+#'   and matrix with value for each point of coordinates `x[i], y[j]`.
 #' @param xcol x index.
 #' @param ycol y index.
 #' @param zcol z index.

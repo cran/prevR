@@ -1,42 +1,42 @@
-## ----include=FALSE-------------------------------------------------------
+## ----include=FALSE------------------------------------------------------------
 Sys.setenv(LANG = "en")
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 library(prevR, quietly = TRUE)
 col <- c(id = "cluster", x = "x", y = "y", n = "n", pos = "pos", c.type = "residence", wn = "weighted.n", wpos = "weighted.pos")
 dhs <- as.prevR(fdhs.clusters, col, fdhs.boundary)
 str(dhs)
 print(dhs)
 
-## ---- eval = FALSE-------------------------------------------------------
+## ---- eval = FALSE------------------------------------------------------------
 #  imported_data <- import.dhs("data.sav", "gps.dbf")
 
-## ---- fig.width=6, fig.height=6------------------------------------------
+## ---- fig.width=6, fig.height=6-----------------------------------------------
 plot(dhs, main = "Clusters position")
 plot(dhs, type = "c.type", main = "Clusters by residence")
 plot(dhs, type = "count", main = "Observations by cluster")
 plot(dhs, type = "flower", main = "Positive cases by cluster")
 
-## ---- fig.width=6, fig.height=6------------------------------------------
+## ---- fig.width=6, fig.height=6-----------------------------------------------
 plot(dhs, axes = TRUE)
 dhs <- changeproj(dhs, "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
 print(dhs)
 plot(dhs, axes = TRUE)
 
-## ---- include=FALSE------------------------------------------------------
+## ---- include=FALSE-----------------------------------------------------------
 qa <- quick.prevR(fdhs, return.results = TRUE, return.plot = TRUE, plot.results = FALSE, progression = FALSE)
 
-## ---- eval=FALSE---------------------------------------------------------
+## ---- eval=FALSE--------------------------------------------------------------
 #  quick.prevR(fdhs)
 
-## ---- echo=FALSE, fig.width=6, fig.height=6------------------------------
+## ---- echo=FALSE, fig.width=6, fig.height=6-----------------------------------
 qa$plot
 
-## ---- fig.width=8, fig.height=4------------------------------------------
+## ---- fig.width=8, fig.height=4-----------------------------------------------
 res <- quick.prevR(fdhs, N = c(100, 200, 300), return.results = TRUE, return.plot = TRUE, plot.results = FALSE, progression = FALSE, nb.cells = 50)
 res$plot
 
-## ---- fig.width=6, fig.height=6------------------------------------------
+## ---- fig.width=6, fig.height=6-----------------------------------------------
 # Calculating rings of the same number of observations for different values of N
 dhs <- rings(fdhs, N = c(100, 200, 300, 400, 500), progression = FALSE)
 print(dhs)

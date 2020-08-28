@@ -5,13 +5,12 @@
 \alias{as.data.frame}
 \title{Convert an object of class prevR into a data.frame.}
 \usage{
-\method{as.data.frame}{prevR}(x, ..., N = NULL, R = NULL,
-  clusters.only = FALSE)
+\method{as.data.frame}{prevR}(x, ..., N = NULL, R = NULL, clusters.only = FALSE)
 }
 \arguments{
-\item{x}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{x}{object of class \code{\linkS4class{prevR}}.}
 
-\item{...}{not used, for compatibility with the generic method \code{\link[base]{as.data.frame}}.}
+\item{...}{not used, for compatibility with the generic method \code{\link[base:as.data.frame]{base::as.data.frame()}}.}
 
 \item{N}{integer or list of integers setting elements of \code{rings} to extract.}
 
@@ -22,15 +21,15 @@
 \value{
 If \code{clusters.only = TRUE}, the function will return only the slot \code{clusters} of \code{x}.
 
-Otherwise, slots \code{clusters} and \code{rings} of \code{x} will be merged in a unique data frame. 
+Otherwise, slots \code{clusters} and \code{rings} of \code{x} will be merged in a unique data frame.
 The columns of \code{rings} will be renamed adding a suffix like \emph{.N300.RInf}.
 
-\code{N} and \code{R} define the elements of \code{rings} to extract. If not specified (\code{NULL}), 
+\code{N} and \code{R} define the elements of \code{rings} to extract. If not specified (\code{NULL}),
 all the elements of \code{rings} will be included.
 }
 \description{
-This function merges the slots \code{clusters} et \code{rings} of 
-a object of class \code{\link[=prevR-class]{prevR}}.
+This function merges the slots \code{clusters} et \code{rings} of
+a object of class \code{\linkS4class{prevR}}.
 }
 \examples{
 str(fdhs)
@@ -45,6 +44,6 @@ str(as.data.frame(fdhs))
 
 }
 \seealso{
-\code{\link[base]{as.data.frame}}\{\pkg{base}\}, \code{\link[prevR]{prevR-class}}.
+\code{\link[base:as.data.frame]{base::as.data.frame()}}, \code{\linkS4class{prevR}}.
 }
 \keyword{manip}

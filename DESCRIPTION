@@ -1,7 +1,8 @@
 Package: prevR
 Type: Package
-Title: Estimating Regional Trends of a Prevalence from a DHS
-Version: 3.4.0
+Title: Estimating Regional Trends of a Prevalence from a DHS and
+        Similar Surveys
+Version: 3.4.1
 Maintainer: Joseph Larmarange <joseph.larmarange@ird.fr>
 Authors@R: c(
   person("Joseph", "Larmarange", email = "joseph.larmarange@ird.fr", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7097-700X"))
@@ -17,7 +18,7 @@ URL: https://github.com/larmarange/prevR/
 BugReports: https://github.com/larmarange/prevR/issues
 LazyLoad: yes
 LazyData: yes
-Depends: R (>= 2.10)
+Depends: R (>= 3.5.0)
 Imports: sp, rgdal (>= 0.7), ggplot2, directlabels, GenKern, fields,
         gstat, foreign, maptools, methods
 Suggests: tcltk, geoR, knitr, rmarkdown
@@ -34,9 +35,9 @@ Collate: 'prevR-package.r' 'setClass.prevR.r' 'is.prevR.r' 'as.prevR.r'
         'kde.prevR.r' 'Noptim.r' 'theme_prevR.r' 'direct.label_prevR.r'
         'quick.prevR.r'
 VignetteBuilder: knitr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2019-05-06 19:05:15 UTC; Larmarange
+Packaged: 2020-08-28 09:41:33 UTC; josep
 Author: Joseph Larmarange [aut, cre] (<https://orcid.org/0000-0001-7097-700X>)
 Repository: CRAN
-Date/Publication: 2019-05-06 20:51:23 UTC
+Date/Publication: 2020-08-28 12:20:03 UTC

@@ -4,17 +4,26 @@
 \alias{quick.prevR}
 \title{Quick prevR analysis and plot}
 \usage{
-quick.prevR(object, N = Noptim(object), nb.cells = 100,
-  cell.size = NULL, weighted = NULL, plot.results = TRUE,
-  return.results = FALSE, return.plot = FALSE, legend.title = "\%",
-  cex = 0.7, progression = TRUE)
+quick.prevR(
+  object,
+  N = Noptim(object),
+  nb.cells = 100,
+  cell.size = NULL,
+  weighted = NULL,
+  plot.results = TRUE,
+  return.results = FALSE,
+  return.plot = FALSE,
+  legend.title = "\%",
+  cex = 0.7,
+  progression = TRUE
+)
 }
 \arguments{
-\item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{object}{object of class \linkS4class{prevR}.}
 
 \item{N}{integer or list of integers corresponding to the rings to use.}
 
-\item{nb.cells}{number of cells on the longuest side of the studied area 
+\item{nb.cells}{number of cells on the longuest side of the studied area
 (unused if \code{cell.size} is defined).}
 
 \item{cell.size}{size of each cell (in the unit of the projection).}
@@ -34,21 +43,21 @@ quick.prevR(object, N = Noptim(object), nb.cells = 100,
 \item{progression}{show a progress bar?}
 }
 \value{
-A list of one or several elements, depending on the arguments: 
+A list of one or several elements, depending on the arguments:
 (i) \code{prev} is a \code{SpatialPixelsDataFrame} containing the prevalence
 surface; (ii) \code{radius} a \code{SpatialPixelsDataFrame} containing the
 kriged surface of the rings radii; (iii) \code{plot} a \code{ggplot} graph.
 }
 \description{
-This function performs several analysis in one go: 
-(i) apply \code{\link{rings,prevR-method}}; 
-(ii) compute prevalence surface with \code{\link{kde,prevR-method}}; 
-(iii) compute the surface of rings radii with \code{\link{krige,ANY,prevR-method}}; 
-(iv) plot prevalence surface using \code{\link{prevR.colors.red}} and add rings radii as a contour plot.
+This function performs several analysis in one go:
+(i) apply \code{\link[=rings]{rings()}};
+(ii) compute prevalence surface with \code{\link[=kde]{kde()}};
+(iii) compute the surface of rings radii with \code{\link[=krige]{krige()}};
+(iv) plot prevalence surface using \code{\link[=prevR.colors.red]{prevR.colors.red()}} and add rings radii as a contour plot.
 }
 \details{
 \code{N} determine the rings to use for the estimation.
-By default, a suggested value of N will be computed with \code{\link{Noptim}}.
+By default, a suggested value of N will be computed with \code{\link[=Noptim]{Noptim()}}.
 }
 \examples{
 \dontrun{
@@ -57,8 +66,7 @@ By default, a suggested value of N will be computed with \code{\link{Noptim}}.
 
 }
 \seealso{
-\code{\link{Noptim}}, \code{\link{rings,prevR-method}}, 
-\code{\link{kde,prevR-method}}, \code{\link{krige,ANY,prevR-method}}.
+\code{\link[=Noptim]{Noptim()}}, \code{\link[=rings]{rings()}}, \code{\link[=kde]{kde()}} and \code{\link[=krige]{krige()}}.
 }
 \keyword{plot}
 \keyword{smooth}

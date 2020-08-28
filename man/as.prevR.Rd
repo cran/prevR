@@ -4,55 +4,53 @@
 \alias{as.prevR}
 \title{Create an object of class prevR.}
 \usage{
-as.prevR(data, col, boundary = NULL,
-  proj = "+proj=longlat +ellps=WGS84")
+as.prevR(data, col, boundary = NULL, proj = "+proj=longlat +datum=WGS84")
 }
 \arguments{
 \item{data}{data frame, each line corresponding to an observed cluster.}
 
 \item{col}{vector identifying the columns of \code{data} to use.\cr
 \code{clusters} columns names are fixed:\itemize{
-  \item "id" (optional) cluster's identifier.
-  \item "x" cluster's longitude.
-  \item "y" cluster's latitude.
-  \item "n" number of valid observations in the cluster.
-  \item "pos" number of positive cases in the cluster.
-  \item "wn" (optional) sum of observations weight.
-  \item "wpos" (optional) sum of positive cases weight.
-  \item "c.type" (optional) type of cluster (used only by \code{\link[=show,prevR-method]{plot}}).
+\item "id" (optional) cluster's identifier.
+\item "x" cluster's longitude.
+\item "y" cluster's latitude.
+\item "n" number of valid observations in the cluster.
+\item "pos" number of positive cases in the cluster.
+\item "wn" (optional) sum of observations weight.
+\item "wpos" (optional) sum of positive cases weight.
+\item "c.type" (optional) type of cluster (used only by \code{\link[=plot]{plot()}}).
 }
 See examples.}
 
-\item{boundary}{object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}} 
+\item{boundary}{object of class \code{\link[sp:SpatialPolygons-class]{sp::SpatialPolygons}}
 defining the studied area.}
 
-\item{proj}{projection of clusters coordinates used in \code{data} 
+\item{proj}{projection of clusters coordinates used in \code{data}
 (longitude and latitude in decimal degrees by default).}
 }
 \value{
-Object of class \code{\link[=prevR-class]{prevR}} 
-(see \code{\link{prevR-class}} for more details)
+Object of class \code{\linkS4class{prevR}}
 }
 \description{
-This function creates an object of class \code{\link[=prevR-class]{prevR}} from a data frame.
+This function creates an object of class \code{\linkS4class{prevR}} from a data frame.
 }
 \details{
-Only "x", "y" "n" and "pos" are required in \code{col}. 
-If "id" is not specified, a numzrical identifier will be automatically created.
+Only "x", "y" "n" and "pos" are required in \code{col}.
+If "id" is not specified, a numerical identifier will be automatically created.
 
-\code{proj} defines projection used by \code{data}. It could be a character string 
-corresponding to a \emph{PROJ.4} projection (see \url{http://trac.osgeo.org/proj/} 
-for more details) or an object of class \code{\link[sp:CRS-class]{CRS}}\{\pkg{sp}\}.\cr
-If the projection of \code{boundary} is defined in  a slot called \code{proj4string}, 
-\code{boundary} will be projected according to \code{proj}. If the slot \code{proj4string} 
+\code{proj} defines projection used by \code{data}. It could be a character string
+corresponding to a \emph{PROJ.4} projection (see \url{https://proj.org/}
+for more details) or an object of class \code{\link[sp:CRS-class]{sp::CRS}}.\cr
+If the projection of \code{boundary} is defined in  a slot called \code{proj4string},
+\code{boundary} will be projected according to \code{proj}. If the slot \code{proj4string}
 is missing, \code{boundary} will be considered to be already in the same projection as \code{proj}.
 
-If \code{boundary} is not defined (\code{NULL}), a considered  corresponding to minimal 
+If \code{boundary} is not defined (\code{NULL}), a considered  corresponding to minimal
 and maximal coordinates of \code{data} will be used.\cr
-\code{boundary} could be the result of the function \code{\link{create.boundary}}.
+\code{boundary} could be the result of the function \code{\link[=create.boundary]{create.boundary()}}.
 
-It's not possible to change projection of \code{data} with \code{as.prevR}. 
-Use \code{\link[=changeproj,prevR-method]{changeproj}} instead.
+It's not possible to change projection of \code{data} with \code{as.prevR()}.
+Use \code{\link[=changeproj]{changeproj()}} instead.
 }
 \examples{
  col <- c(id = "cluster",
@@ -70,7 +68,7 @@ Use \code{\link[=changeproj,prevR-method]{changeproj}} instead.
  print(dhs)
 }
 \seealso{
-\code{\link{prevR-class}}, \code{\link{create.boundary}}, 
-\code{\link[=changeproj,prevR-method]{changeproj}}, \code{\link{import.dhs}}.
+\code{\linkS4class{prevR}} class, \code{\link[=create.boundary]{create.boundary()}},
+\code{\link[=changeproj]{changeproj()}}, \code{\link[=import.dhs]{import.dhs()}}.
 }
 \keyword{manip}

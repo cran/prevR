@@ -4,12 +4,15 @@
 \alias{create.boundary}
 \title{Provide national boundaries of a country.}
 \usage{
-create.boundary(countries = NULL, multiple = F,
-  proj = "+proj=longlat +ellps=WGS84")
+create.boundary(
+  countries = NULL,
+  multiple = F,
+  proj = "+proj=longlat +datum=WGS84"
+)
 }
 \arguments{
-\item{countries}{a vector of character string corresponding to the name of the countries 
-you want to extract from the dataset. If \code{NULL}, a dialog box will be appear in order to select
+\item{countries}{a vector of character string corresponding to the name of the countries
+you want to extract from the dataset. If \code{NULL}, a dialogue box will be appear in order to select
 the desired country.}
 
 \item{multiple}{should the dialog box allow multiple selection (unused if \code{countries} is specified)?}
@@ -17,17 +20,17 @@ the desired country.}
 \item{proj}{map projection to use for the result (longitude and latitude in decimal degrees by default).}
 }
 \value{
-Object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}\{\pkg{sp}\}.
+Object of class \link[sp:SpatialPolygons-class]{sp::SpatialPolygons}.
 }
 \description{
-This function uses the data set \code{\link{TMWorldBorders}}. One or several countries
-can be selected and will be returned as an object of class 
-\code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}.
+This function uses the data set \link{TMWorldBorders}. One or several countries
+can be selected and will be returned as an object of class
+\link[sp:SpatialPolygons-class]{sp::SpatialPolygons}.
 }
 \details{
-\code{proj} could be a character string corresponding to a \emph{PROJ.4} 
-projection (see \url{http://trac.osgeo.org/proj/} for more details) 
-or an object of class \code{\link[sp:CRS-class]{CRS}}\{\pkg{sp}\}.
+\code{proj} could be a character string corresponding to a \emph{PROJ.4}
+projection (see \url{https://proj.org/} for more details)
+or an object of class \link[sp:CRS-class]{sp::CRS}.
 }
 \note{
 The result will be automatically plotted.
@@ -45,7 +48,7 @@ boundary <- create.boundary(countries = c("Burkina Faso", "Ghana", "Benin"))
 
 }
 \seealso{
-\code{\link{TMWorldBorders}}.
+\link{TMWorldBorders}.
 }
 \keyword{manip}
 \keyword{spatial}
