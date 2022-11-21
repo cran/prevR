@@ -2,7 +2,7 @@ Package: prevR
 Type: Package
 Title: Estimating Regional Trends of a Prevalence from a DHS and
         Similar Surveys
-Version: 4.0.0
+Version: 4.0.1
 Maintainer: Joseph Larmarange <joseph.larmarange@ird.fr>
 Authors@R: c(
   person("Joseph", "Larmarange", email = "joseph.larmarange@ird.fr", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7097-700X"))
@@ -35,9 +35,9 @@ Collate: 'prevR-package.r' 'setClass.prevR.r' 'is.prevR.r' 'as.prevR.r'
         'Noptim.r' 'theme_prevR.r' 'direct.label_prevR.r'
         'quick.prevR.r'
 VignetteBuilder: knitr
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 NeedsCompilation: no
-Packaged: 2022-05-11 16:59:09 UTC; josep
+Packaged: 2022-11-21 16:56:59 UTC; josep
 Author: Joseph Larmarange [aut, cre] (<https://orcid.org/0000-0001-7097-700X>)
 Repository: CRAN
-Date/Publication: 2022-05-11 23:10:03 UTC
+Date/Publication: 2022-11-21 21:50:01 UTC

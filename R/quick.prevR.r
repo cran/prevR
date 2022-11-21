@@ -76,10 +76,19 @@ quick.prevR <- function(object, N = Noptim(object), nb.cells = 100, cell.size = 
     
     r$N <- factor(r$N, levels=N, labels=paste0("N=",N))
     
-    p <- ggplot2::ggplot(r, ggplot2::aes_string(x="x", y="y", fill="prev", z="radius")) +
+    p <-
+      ggplot2::ggplot(
+        r,
+        ggplot2::aes(
+          x = .data[["x"]],
+          y = .data[["y"]],
+          fill = .data[["prev"]],
+          z = .data[["radius"]]
+        )
+      ) +
       ggplot2::geom_raster() +
       ggplot2::scale_fill_gradientn(colours=prevR.colors.red(20)) +
-      ggplot2::stat_contour(aes_string(colour = "..level..")) +
+      ggplot2::stat_contour(ggplot2::aes(colour = ggplot2::after_stat(level), fill = NULL)) +
       ggplot2::scale_colour_continuous(low = "grey50", high = "grey50") +
       ggplot2::facet_wrap(~ N) +
       ggplot2::coord_fixed() + ggplot2::xlab("") + ggplot2::ylab("") +
@@ -98,3 +107,6 @@ quick.prevR <- function(object, N = Noptim(object), nb.cells = 100, cell.size = 
   else if (!return.results & return.plot)
     return(list(tidy = r, plot=p))
 }
+
+# to avoid no visible binding in after_stat(level)
+utils::globalVariables("level")
